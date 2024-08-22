@@ -130,3 +130,37 @@ int strcmp(char s1[], char s2[]) {
         r = 1;
     return r;
 }
+
+//11
+void strrev (char s[]) {
+    int size, i;
+    for (size = 0; s[size] != '\0'; size++);
+    char s2[size+1];
+    for (i = 0; size != -1 ; i++, size--)
+        s2[i] = s[size - 1];
+    for (i = 0; s2[i] != '\0'; i++)
+        s[i] = s2[i];
+    return;
+}
+
+//12
+void strnoV (char t[]){
+    int j, i;
+    for (i = 0; t[i] != '\0'; i++){
+        if (t[i] == 'A' || t[i] == 'E' || t[i] == 'I' || t[i] == 'O' || t[i] == 'U' || t[i] == 'a' || t[i] == 'e' || t[i] == 'i' || t[i] == 'o' || t[i] == 'u'){
+            for (j = i; t[j] != '\0'; j++)
+                t[j] = t[j+1];
+        i--;
+        }
+    }
+}
+
+//17
+int maiorPrefixo (char s1 [], char s2 []) {
+    int i, r = 0;
+    for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++, r++){
+        if (s1[i] != s2[i])
+            break;
+    }
+    return r;
+}
